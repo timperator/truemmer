@@ -1,31 +1,74 @@
-    .container {
-        background: rgb(235, 235, 235);
-        width: 500px;
-        border: 1px solid grey;
-        border-radius: 2px;
-        padding: 20px;
-        margin: auto;
-        position: absolute;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
+@media (max-width:960px) and (orientation: landscape) {
+	.container {
+		width: auto;
+		height: auto;
+		border: none;
+		position: unset;
+		transform: unset;
 
-        
-        .truemmer-values {
-            display: grid;
-            grid-template-columns: max-content auto;
-            margin-bottom: 20px;
+		.truemmer-values {
+			grid-template-columns: max-content auto;
+		}
+	}
+}
 
-            label {
-                margin-top: auto;
-                margin-bottom: auto;
-                margin-right: 20px;
-            }
+@media (max-width:960px) and (orientation:portrait) {
+	.container {
+		width: auto;
+		height: calc(100% - 4em);
+		border: none;
+		position: unset;
+		transform: unset;
+
+		.truemmer-values {
+			grid-template-columns: unset;
+		}
+	}
+}
+
+@media (min-width:961px) { 
+	.container {
+		width: 500px;
+		height: unset;
+		border: 1px solid grey;
+		position: absolute;
+		transform: translate(-50%, -50%);
+
+		.truemmer-values {
+			grid-template-columns: max-content auto;
+		}
+	}
+}
+
+.container {
+    background: rgb(235, 235, 235);
+    border-radius: 2px;
+    padding: 2em;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    
+    .truemmer-values {
+        display: grid;
+        margin-bottom: 20px;
+
+        label {
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-right: 20px;
         }
 
-        button {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+		mat-select {
+			height: 32px;
+			padding: 8px 0;
+			width: inherit;
+		}
+    }
+
+    button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }

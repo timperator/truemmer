@@ -7,3 +7,14 @@ body {
     height: 100%;
     margin: 0;
 }
+
+@media (max-width:960px) and (orientation: landscape) {
+    body {
+        background: white;
+    }
+}
+
+app-root {
+	display: block;
+	height: 100%;
+}
