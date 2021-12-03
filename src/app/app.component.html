@@ -1,0 +1,34 @@
+<div class="container">
+
+  <h1>Trümmerfaktor</h1>
+
+  <form class="truemmer-values">
+
+    <label for="raid">Raid</label>
+    <mat-select [(ngModel)]="complexity" name="complexity">
+      <mat-option *ngFor="let raid of raids" [value]="raid.complexity">
+        {{raid.viewValue}}
+      </mat-option>
+    </mat-select>
+
+    <label for="trolling">Trollfaktor</label>
+    <mat-slider [(ngModel)]="trolling" name="trolling" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+    </mat-slider>
+
+    <label for="skill">Skill</label>
+    <mat-slider [(ngModel)]="skill" name="skill" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+    </mat-slider>
+
+    <label for="experience">Erfahrung der Gruppe</label>
+    <mat-slider [(ngModel)]="experience" name="experience" min="1" max="10" step="1" value="5" thumbLabel
+      tickInterval="1"></mat-slider>
+
+    <label for="motivation">Motivation</label>
+    <mat-slider [(ngModel)]="motivation" name="motivation" min="1" max="10" step="1" value="5" thumbLabel
+      tickInterval="1"></mat-slider>
+
+  </form>
+
+  <button mat-raised-button color="primary" class="btn" (click)="showTruemmerDialog()">Zwirni fragen</button>
+
+</div>
