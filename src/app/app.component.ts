@@ -19,8 +19,8 @@ export interface DialogData {
 export class AppComponent {
 
   constructor(public dialog: MatDialog) {}
-
-  complexity = 1;
+  
+  complexity = 8;
   trolling = 1;
   skill = 1;
   experience = 1;
