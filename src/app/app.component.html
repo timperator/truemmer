@@ -4,26 +4,26 @@
 
   <form class="truemmer-values">
 
-    <label for="raid">Raid</label>
+    <mat-label for="raid">Raid</mat-label>
     <mat-select [(ngModel)]="complexity" name="complexity">
       <mat-option *ngFor="let raid of raids" [value]="raid.complexity">
         {{raid.viewValue}}
       </mat-option>
     </mat-select>
 
-    <label for="trolling">Trollfaktor</label>
+    <mat-label for="trolling">Trollfaktor</mat-label>
     <mat-slider [(ngModel)]="trolling" name="trolling" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
     </mat-slider>
 
-    <label for="skill">Skill</label>
+    <mat-label for="skill">Skill</mat-label>
     <mat-slider [(ngModel)]="skill" name="skill" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
     </mat-slider>
 
-    <label for="experience">Erfahrung der Gruppe</label>
+    <mat-label for="experience">Erfahrung der Gruppe</mat-label>
     <mat-slider [(ngModel)]="experience" name="experience" min="1" max="10" step="1" value="5" thumbLabel
       tickInterval="1"></mat-slider>
 
-    <label for="motivation">Motivation</label>
+    <mat-label for="motivation">Motivation</mat-label>
     <mat-slider [(ngModel)]="motivation" name="motivation" min="1" max="10" step="1" value="5" thumbLabel
       tickInterval="1"></mat-slider>
 

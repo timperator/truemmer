@@ -1,3 +1,10 @@
+@import '~@angular/material/theming';
+@import './assets/styles/app-color-palette';
+@import './assets/styles/app-theme';
+
+$mat-dark-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+@include app-style-core();
+
 html {
     height: 100%;
 }
@@ -17,4 +24,8 @@ body {
 app-root {
 	display: block;
 	height: 100%;
+}
+
+.theme-dark {
+    @include app-theme($mat-dark-theme);
 }

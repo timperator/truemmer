@@ -30,7 +30,7 @@
 	.container {
 		width: 500px;
 		height: unset;
-		border: 1px solid grey;
+		border: 2px solid transparent;
 		position: absolute;
 		transform: translate(-50%, -50%);
 
@@ -47,12 +47,12 @@
     margin: auto;
     top: 50%;
     left: 50%;
-    
+
     .truemmer-values {
         display: grid;
         margin-bottom: 20px;
 
-        label {
+        mat-label {
             margin-top: auto;
             margin-bottom: auto;
             margin-right: 20px;
