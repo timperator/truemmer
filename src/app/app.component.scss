@@ -1,3 +1,4 @@
+// phone landscape
 @media (max-width:960px) and (orientation: landscape) {
 	.container {
 		width: auto;
@@ -12,6 +13,7 @@
 	}
 }
 
+// phone portrait 
 @media (max-width:960px) and (orientation:portrait) {
 	.container {
 		width: auto;
@@ -26,6 +28,7 @@
 	}
 }
 
+// browsers
 @media (min-width:961px) { 
 	.container {
 		width: 500px;

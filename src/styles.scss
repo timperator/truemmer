@@ -15,15 +15,9 @@ body {
     margin: 0;
 }
 
-@media (max-width:960px) and (orientation: landscape) {
-    body {
-        background: white;
-    }
-}
-
 app-root {
 	display: block;
-	height: 100%;
+    height: calc(100% - 56px);
 }
 
 .theme-dark {
