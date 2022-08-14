@@ -107,5 +107,7 @@
       }
     }
   },
-  "defaultProject": "truemmer"
+  "cli": {
+    "analytics": false
+  }
 }
