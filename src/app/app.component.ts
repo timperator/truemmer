@@ -30,13 +30,14 @@ export class AppComponent {
     { viewValue: 'The Nature of Progress', complexity: 9 },
     { viewValue: 'Eternity Vault', complexity: 1 },
     { viewValue: 'Gods from the Machine', complexity: 10 },
-    { viewValue: 'Explosive Conflict', complexity: 5 },
+    { viewValue: 'Explosive Conflict', complexity: 6 },
     { viewValue: "Karagga's Palace", complexity: 1 },
     { viewValue: 'Scum and Villainy', complexity: 5 },
     { viewValue: 'Temple of Sacrifice', complexity: 7 },
     { viewValue: 'Terror from Beyond', complexity: 4 },
-    { viewValue: 'The Dread Fortress', complexity: 8 },
-    { viewValue: 'The Dread Palace', complexity: 7 },
+    { viewValue: 'The R-4 Anomaly', complexity: 10 },
+    { viewValue: 'The Dread Fortress', complexity: 7 },
+    { viewValue: 'The Dread Palace', complexity: 8 },
     { viewValue: 'The Ravagers', complexity: 6 },
   ];
 
