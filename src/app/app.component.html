@@ -15,19 +15,25 @@
 
     <mat-label for="trolling">Trollfaktor</mat-label>
     <mat-slider [(ngModel)]="trolling" name="trolling" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+      <input matSliderThumb>
     </mat-slider>
 
     <mat-label for="skill">Skill</mat-label>
     <mat-slider [(ngModel)]="skill" name="skill" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+      <input matSliderThumb>
     </mat-slider>
 
     <mat-label for="experience">Erfahrung der Gruppe</mat-label>
     <mat-slider [(ngModel)]="experience" name="experience" min="1" max="10" step="1" value="5" thumbLabel
-      tickInterval="1"></mat-slider>
+      tickInterval="1">
+      <input matSliderThumb>
+    </mat-slider>
 
     <mat-label for="motivation">Motivation</mat-label>
     <mat-slider [(ngModel)]="motivation" name="motivation" min="1" max="10" step="1" value="5" thumbLabel
-      tickInterval="1"></mat-slider>
+      tickInterval="1">
+      <input matSliderThumb>
+    </mat-slider>
 
   </form>
 
