@@ -6,7 +6,7 @@ import { MatSliderModule as MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule as MatButtonModule } from '@angular/material/button';
 import { MatSelectModule as MatSelectModule } from '@angular/material/select';
 import { MatDialogModule as MatDialogModule } from '@angular/material/dialog';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { TruemmerdialogComponent } from './truemmerdialog/truemmerdialog.component';
 

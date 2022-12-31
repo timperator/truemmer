@@ -1,5 +1,5 @@
 import { Component, Output } from '@angular/core';
-import {MatDialog as MatDialog, MatDialogRef as MatDialogRef, MAT_DIALOG_DATA as MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog as MatDialog, MatDialogRef as MatDialogRef, MAT_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TruemmerdialogComponent } from './truemmerdialog/truemmerdialog.component';
 
 interface Raid {
@@ -18,8 +18,8 @@ export interface DialogData {
 })
 export class AppComponent {
 
-  constructor(public dialog: MatDialog) {}
-  
+  constructor(public dialog: MatDialog) { }
+
   complexity = 8;
   trolling = 1;
   skill = 1;
@@ -43,7 +43,7 @@ export class AppComponent {
 
   showTruemmerDialog(): void {
     const dialogRef = this.dialog.open(TruemmerdialogComponent, {
-      data: {truemmerfaktor: this.calculateTruemmer() },
+      data: { truemmerfaktor: this.calculateTruemmer() },
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -21,57 +21,50 @@
 		border: none;
 		position: unset;
 		transform: unset;
-
-		.truemmer-values {
-			grid-template-columns: unset;
-		}
+		grid-template-columns: unset;
 	}
 }
 
 // browsers
-@media (min-width:961px) { 
+@media (min-width:961px) {
 	.container {
 		width: 500px;
 		height: unset;
 		border: 2px solid transparent;
 		position: absolute;
 		transform: translate(-50%, -50%);
-
-		.truemmer-values {
-			grid-template-columns: max-content auto;
-		}
+		grid-template-columns: max-content auto;
 	}
 }
 
 .container {
-    background: rgb(235, 235, 235);
-    border-radius: 2px;
-    padding: 2em;
-    margin: auto;
-    top: 50%;
-    left: 50%;
+	background: rgb(235, 235, 235);
+	border-radius: 2px;
+	padding: 2em;
+	margin: auto;
+	top: 50%;
+	left: 50%;
 
-    .truemmer-values {
-        display: grid;
-        margin-bottom: 20px;
+	display: grid;
+	margin-bottom: 20px;
 
-        mat-label {
-            margin-top: auto;
-            margin-bottom: auto;
-            margin-right: 20px;
-        }
+	mat-label {
+		margin-top: auto;
+		margin-bottom: auto;
+		margin-right: 20px;
+	}
 
-		mat-select {
-			height: 32px;
-			padding: 8px 0;
-			width: inherit;
-		}
-    }
+	mat-select {
+		height: 32px;
+		padding: 8px 0;
+	}
 
-    button {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+	button {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		grid-column-end: -1;
+		grid-column-start: 1;
+	}
 
 }
