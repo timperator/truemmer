@@ -45,11 +45,6 @@ export class AppComponent {
     const dialogRef = this.dialog.open(TruemmerdialogComponent, {
       data: { truemmerfaktor: this.calculateTruemmer() },
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-
   }
 
   calculateTruemmer() {
