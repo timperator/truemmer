@@ -2,14 +2,10 @@
 @import './_app-typography';
 
 @mixin app-style-core() {
-    @include mat-ripple();
-    @include cdk-a11y();
-    @include cdk-overlay();
-    @include cdk-text-field();
   
     // This mixin comes form _app-typography
     // It contains already configured typography
-    @include app-typography();
+    // @include app-typography();
   }
   
   @mixin app-theme($theme) {

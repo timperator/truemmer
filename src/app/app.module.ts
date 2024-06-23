@@ -9,6 +9,8 @@ import { MatDialogModule as MatDialogModule } from '@angular/material/dialog';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
 import { TruemmerdialogComponent } from './truemmerdialog/truemmerdialog.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { A11yModule } from '@angular/cdk/a11y';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { TruemmerdialogComponent } from './truemmerdialog/truemmerdialog.compone
     MatSelectModule,
     MatDialogModule,
     MatToolbarModule,
-    FormsModule
+    FormsModule,
+    OverlayModule,
+    A11yModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

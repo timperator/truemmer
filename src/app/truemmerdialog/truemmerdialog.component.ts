@@ -4,8 +4,7 @@ import { DialogData } from '../app.component';
 
 @Component({
   selector: 'app-truemmerdialog',
-  templateUrl: './truemmerdialog.component.html',
-  styleUrls: ['./truemmerdialog.component.scss']
+  templateUrl: './truemmerdialog.component.html'
 })
 export class TruemmerdialogComponent {
 
