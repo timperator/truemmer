@@ -2,35 +2,68 @@
   <span>Trümmerfaktor</span>
 </mat-toolbar>
 
-<div class="container">
+<div class="card-container">
 
-  <mat-label for="raid">Raid</mat-label>
-  <mat-select [(ngModel)]="complexity" name="complexity">
-    <mat-option *ngFor="let raid of raids" [value]="raid.complexity">
-      {{raid.viewValue}}
-    </mat-option>
-  </mat-select>
+  <mat-card>
 
-  <mat-label for="trolling">Trollfaktor</mat-label>
-  <mat-slider name="trolling" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
-    <input matSliderThumb [(ngModel)]="trolling">
-  </mat-slider>
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>
+          Trümmerfaktorbestimmung
+        </mat-card-title>
+        <mat-card-subtitle>
+          Nach Zwirni
+        </mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
 
-  <mat-label for="skill">Skill</mat-label>
-  <mat-slider name="skill" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
-    <input matSliderThumb [(ngModel)]="skill">
-  </mat-slider>
+    <mat-card-content>
 
-  <mat-label for="experience">Erfahrung der Gruppe</mat-label>
-  <mat-slider name="experience" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
-    <input matSliderThumb [(ngModel)]="experience">
-  </mat-slider>
+      <div class="input-container">
+        <mat-form-field>
+          <mat-label for="raid">Raid</mat-label>
+          <mat-select [(ngModel)]="complexity" name="complexity">
+            <mat-option *ngFor="let raid of raids" [value]="raid.complexity">
+              {{raid.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
 
-  <mat-label for="motivation">Motivation</mat-label>
-  <mat-slider name="motivation" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
-    <input matSliderThumb [(ngModel)]="motivation">
-  </mat-slider>
+      <div class="input-container">
+        <label for="trolling">Trollfaktor</label>
+        <mat-slider name="trolling" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+          <input matSliderThumb [(ngModel)]="trolling">
+        </mat-slider>
+      </div>
 
-  <button mat-raised-button color="primary" class="btn" (click)="showTruemmerDialog()">Zwirni fragen</button>
+      <div class="input-container">
+        <label for="skill">Skill</label>
+        <mat-slider name="skill" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+          <input matSliderThumb [(ngModel)]="skill">
+        </mat-slider>
+      </div>
+
+      <div class="input-container">
+        <label for="experience">Erfahrung</label>
+        <mat-slider name="experience" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+          <input matSliderThumb [(ngModel)]="experience">
+        </mat-slider>
+      </div>
+
+      <div class="input-container">
+        <label for="motivation">Motivation</label>
+        <mat-slider name="motivation" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+          <input matSliderThumb [(ngModel)]="motivation">
+        </mat-slider>
+      </div>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" class="btn" (click)="showTruemmerDialog()">Zwirni fragen</button>
+      </mat-card-actions>
+
+    </mat-card-content>
+
+  </mat-card>
 
 </div>

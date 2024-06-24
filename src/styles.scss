@@ -1,24 +1,30 @@
-// @import './assets/styles/app-color-palette';
-@import './assets/styles/app-theme';
+@use "@angular/material" as mat;
 
-// $mat-dark-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
-@include app-style-core();
+@include mat.core();
 
-html {
-    height: 100%;
+$angular-material-3-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
+
+:root {
+  @include mat.all-component-themes($angular-material-3-theme);
+  user-select: none;
 }
 
-body { 
-    background:black;
+html, body { 
     height: 100%;
     margin: 0;
 }
 
 app-root {
-	display: block;
-    height: calc(100% - 56px);
-}
-
-.theme-dark {
-    // @include app-theme($mat-dark-theme);
+  height: 100vh;
 }
