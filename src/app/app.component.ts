@@ -1,5 +1,5 @@
-import { Component, Inject, Output } from '@angular/core';
-import { MatDialog as MatDialog, MatDialogRef as MatDialogRef, MAT_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialog as MatDialog } from '@angular/material/dialog';
 import { TruemmerdialogComponent } from './truemmerdialog/truemmerdialog.component';
 import { DOCUMENT } from '@angular/common';
 
@@ -19,7 +19,11 @@ export interface DialogData {
 })
 export class AppComponent {
 
-  constructor(public dialog: MatDialog, @Inject(DOCUMENT) private document: Document) { }
+  constructor(public dialog: MatDialog, @Inject(DOCUMENT) private document: Document) {
+    if (localStorage.getItem('dark-theme') === 'false') {
+      this.document.body.classList.remove('dark-theme');
+    }
+  }
 
   darkTheme = true;
 
@@ -48,8 +52,10 @@ export class AppComponent {
     this.darkTheme = !darkTheme;
     if (this.document?.body.classList.contains('dark-theme')) {
       this.document.body.classList.remove('dark-theme');
+      localStorage.setItem('dark-theme', 'false');
     } else {
       this.document.body.classList.add('dark-theme');
+      localStorage.setItem('dark-theme', 'true');
     }
   }
 
