@@ -1,28 +1,38 @@
 @use "@angular/material" as mat;
+@use "m3-theme";
 
 @include mat.core();
 
-$angular-material-3-theme: mat.define-theme(
-  (
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    density: (
-      scale: 0,
-    ),
-  )
-);
+body {
+  &.dark-theme {
+    @include mat.all-component-themes(m3-theme.$dark-theme);
 
-:root {
-  @include mat.all-component-themes($angular-material-3-theme);
-  user-select: none;
+    app-root {
+      mat-sidenav-container {
+        background-color: rgb(10, 10, 10);
+        
+        .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+          background-color: #222627;
+        }
+      }
+    }
+  }
+  
+  &:not(.dark-theme) {
+    @include mat.all-component-themes(m3-theme.$light-theme);
+    
+    app-root {
+      mat-sidenav-container {
+        background-color: #cde7eb;
+      }
+    }
+  }
 }
 
 html, body { 
-    height: 100%;
-    margin: 0;
+  user-select: none;
+  height: 100%;
+  margin: 0;
 }
 
 app-root {

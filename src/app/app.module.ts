@@ -13,6 +13,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { A11yModule } from '@angular/cdk/a11y';
 import {MatCardModule} from '@angular/material/card'
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     OverlayModule,
     A11yModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
