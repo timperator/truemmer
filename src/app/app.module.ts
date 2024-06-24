@@ -11,9 +11,12 @@ import { FormsModule } from '@angular/forms';
 import { TruemmerdialogComponent } from './truemmerdialog/truemmerdialog.component';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { A11yModule } from '@angular/cdk/a11y';
-import {MatCardModule} from '@angular/material/card'
+import { MatCardModule } from '@angular/material/card'
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule} from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     A11yModule,
     MatCardModule,
     MatFormFieldModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

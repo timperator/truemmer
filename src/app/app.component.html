@@ -1,76 +1,90 @@
 <mat-toolbar>
   <span>Trümmerfaktor</span>
+  <span class="toolbar-spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
 </mat-toolbar>
 
+<mat-menu #menu="matMenu" xPosition="before">
+  <button mat-menu-item *ngIf="darkTheme" (click)="setDarkTheme(true)">
+    <mat-icon>light_mode</mat-icon>
+    <span>Light Theme</span>
+  </button>
+  <button  mat-menu-item  *ngIf="!darkTheme"  (click)="setDarkTheme(false)">
+    <mat-icon>dark_mode</mat-icon>
+    <span>Dark Theme</span>
+  </button>
+</mat-menu>
+
 <mat-sidenav-container>
-    <mat-sidenav-content>
+  <mat-sidenav-content>
 
-    
-<div class="card-container">
+    <div class="card-container">
 
-  <mat-card>
+      <mat-card>
 
-    <mat-card-header>
-      <mat-card-title-group>
-        <mat-card-title>
-          Trümmerfaktorbestimmung
-        </mat-card-title>
-        <mat-card-subtitle>
-          Nach Zwirni
-        </mat-card-subtitle>
-      </mat-card-title-group>
-    </mat-card-header>
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>
+              Trümmerfaktorbestimmung
+            </mat-card-title>
+            <mat-card-subtitle>
+              Nach Zwirni
+            </mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card-header>
 
-    <mat-card-content>
+        <mat-card-content>
 
-      <div class="input-container">
-        <mat-form-field>
-          <mat-label for="raid">Raid</mat-label>
-          <mat-select [(ngModel)]="complexity" name="complexity">
-            <mat-option *ngFor="let raid of raids" [value]="raid.complexity">
-              {{raid.viewValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+          <div class="input-container">
+            <mat-form-field>
+              <mat-label for="raid">Raid</mat-label>
+              <mat-select [(ngModel)]="complexity" name="complexity">
+                <mat-option *ngFor="let raid of raids" [value]="raid.complexity">
+                  {{raid.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
 
-      <div class="input-container">
-        <label for="trolling">Trollfaktor</label>
-        <mat-slider name="trolling" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
-          <input matSliderThumb [(ngModel)]="trolling">
-        </mat-slider>
-      </div>
+          <div class="input-container">
+            <label for="trolling">Trollfaktor</label>
+            <mat-slider name="trolling" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+              <input matSliderThumb [(ngModel)]="trolling">
+            </mat-slider>
+          </div>
 
-      <div class="input-container">
-        <label for="skill">Skill</label>
-        <mat-slider name="skill" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
-          <input matSliderThumb [(ngModel)]="skill">
-        </mat-slider>
-      </div>
+          <div class="input-container">
+            <label for="skill">Skill</label>
+            <mat-slider name="skill" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+              <input matSliderThumb [(ngModel)]="skill">
+            </mat-slider>
+          </div>
 
-      <div class="input-container">
-        <label for="experience">Erfahrung</label>
-        <mat-slider name="experience" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
-          <input matSliderThumb [(ngModel)]="experience">
-        </mat-slider>
-      </div>
+          <div class="input-container">
+            <label for="experience">Erfahrung</label>
+            <mat-slider name="experience" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+              <input matSliderThumb [(ngModel)]="experience">
+            </mat-slider>
+          </div>
 
-      <div class="input-container">
-        <label for="motivation">Motivation</label>
-        <mat-slider name="motivation" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
-          <input matSliderThumb [(ngModel)]="motivation">
-        </mat-slider>
-      </div>
+          <div class="input-container">
+            <label for="motivation">Motivation</label>
+            <mat-slider name="motivation" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
+              <input matSliderThumb [(ngModel)]="motivation">
+            </mat-slider>
+          </div>
 
-      <mat-card-actions>
-        <button mat-raised-button color="primary" class="btn" (click)="showTruemmerDialog()">Zwirni fragen</button>
-      </mat-card-actions>
+          <mat-card-actions>
+            <button mat-flat-button color="primary" class="btn" (click)="showTruemmerDialog()">Zwirni fragen</button>
+          </mat-card-actions>
 
-    </mat-card-content>
+        </mat-card-content>
 
-  </mat-card>
+      </mat-card>
 
-</div>
+    </div>
 
-</mat-sidenav-content>
+  </mat-sidenav-content>
 </mat-sidenav-container>

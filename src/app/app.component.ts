@@ -1,6 +1,7 @@
-import { Component, Output } from '@angular/core';
+import { Component, Inject, Output } from '@angular/core';
 import { MatDialog as MatDialog, MatDialogRef as MatDialogRef, MAT_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TruemmerdialogComponent } from './truemmerdialog/truemmerdialog.component';
+import { DOCUMENT } from '@angular/common';
 
 interface Raid {
   complexity: number;
@@ -18,7 +19,9 @@ export interface DialogData {
 })
 export class AppComponent {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, @Inject(DOCUMENT) private document: Document) { }
+
+  darkTheme = true;
 
   complexity = 8;
   trolling = 1;
@@ -40,6 +43,15 @@ export class AppComponent {
     { viewValue: 'The Dread Palace', complexity: 6 },
     { viewValue: 'The Ravagers', complexity: 6 },
   ];
+
+  setDarkTheme(darkTheme: boolean) {
+    this.darkTheme = !darkTheme;
+    if (this.document?.body.classList.contains('dark-theme')) {
+      this.document.body.classList.remove('dark-theme');
+    } else {
+      this.document.body.classList.add('dark-theme');
+    }
+  }
 
   showTruemmerDialog(): void {
     const dialogRef = this.dialog.open(TruemmerdialogComponent, {
