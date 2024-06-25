@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>Trümmerfaktor</span>
+  <span translate>meme_potential</span>
   <span class="toolbar-spacer"></span>
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
@@ -9,11 +9,28 @@
 <mat-menu #menu="matMenu" xPosition="before">
   <button mat-menu-item *ngIf="darkTheme" (click)="setDarkTheme(true)">
     <mat-icon>light_mode</mat-icon>
-    <span>Light Theme</span>
+    <span translate>light_theme</span>
   </button>
   <button  mat-menu-item  *ngIf="!darkTheme"  (click)="setDarkTheme(false)">
     <mat-icon>dark_mode</mat-icon>
-    <span>Dark Theme</span>
+    <span translate>dark_theme</span>
+  </button>
+  <button mat-menu-item [matMenuTriggerFor]="languageMenu">
+    <mat-icon class="material-symbols-outlined">language</mat-icon>
+    <span translate="language"></span>
+  </button>
+</mat-menu>
+
+<mat-menu #languageMenu="matMenu" xPosition="before">
+  <button mat-menu-item (click)="setLanguage('de')">
+    <mat-icon *ngIf="isLanguage('de')">radio_button_checked</mat-icon>
+    <mat-icon *ngIf="!isLanguage('de')">radio_button_unchecked</mat-icon>
+    <span>Deutsch</span>
+  </button>
+  <button mat-menu-item (click)="setLanguage('en')">
+    <mat-icon *ngIf="isLanguage('en')">radio_button_checked</mat-icon>
+    <mat-icon *ngIf="!isLanguage('en')">radio_button_unchecked</mat-icon>
+    <span>English</span>
   </button>
 </mat-menu>
 
@@ -26,11 +43,11 @@
 
         <mat-card-header>
           <mat-card-title-group>
-            <mat-card-title>
-              Trümmerfaktorbestimmung
+            <mat-card-title translate>
+              meme_potential_determination
             </mat-card-title>
-            <mat-card-subtitle>
-              Nach Zwirni
+            <mat-card-subtitle translate>
+              according_to_zwirni
             </mat-card-subtitle>
           </mat-card-title-group>
         </mat-card-header>
@@ -39,7 +56,7 @@
 
           <div class="input-container">
             <mat-form-field>
-              <mat-label for="raid">Raid</mat-label>
+              <mat-label for="raid" translate>raid</mat-label>
               <mat-select [(ngModel)]="complexity" name="complexity">
                 <mat-option *ngFor="let raid of raids" [value]="raid.complexity">
                   {{raid.viewValue}}
@@ -49,35 +66,35 @@
           </div>
 
           <div class="input-container">
-            <label for="trolling">Trollfaktor</label>
+            <label for="trolling" translate>trolling_factor</label>
             <mat-slider name="trolling" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
               <input matSliderThumb [(ngModel)]="trolling">
             </mat-slider>
           </div>
 
           <div class="input-container">
-            <label for="skill">Skill</label>
+            <label for="skill" translate>skill_level</label>
             <mat-slider name="skill" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
               <input matSliderThumb [(ngModel)]="skill">
             </mat-slider>
           </div>
 
           <div class="input-container">
-            <label for="experience">Erfahrung</label>
+            <label for="experience" translate>experience</label>
             <mat-slider name="experience" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
               <input matSliderThumb [(ngModel)]="experience">
             </mat-slider>
           </div>
 
           <div class="input-container">
-            <label for="motivation">Motivation</label>
+            <label for="motivation" translate>motivation</label>
             <mat-slider name="motivation" min="1" max="10" step="1" value="5" thumbLabel tickInterval="1">
               <input matSliderThumb [(ngModel)]="motivation">
             </mat-slider>
           </div>
 
           <mat-card-actions>
-            <button mat-flat-button color="primary" class="btn" (click)="showTruemmerDialog()">Zwirni fragen</button>
+            <button mat-flat-button color="primary" class="btn" (click)="showTruemmerDialog()" translate="submit"></button>
           </mat-card-actions>
 
         </mat-card-content>

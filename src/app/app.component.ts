@@ -1,7 +1,8 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { MatDialog as MatDialog } from '@angular/material/dialog';
 import { TruemmerdialogComponent } from './truemmerdialog/truemmerdialog.component';
 import { DOCUMENT } from '@angular/common';
+import { TranslateService } from '@ngx-translate/core';
 
 interface Raid {
   complexity: number;
@@ -26,6 +27,8 @@ export class AppComponent {
   }
 
   darkTheme = true;
+  language = 'de';
+  translateService = inject(TranslateService);
 
   complexity = 8;
   trolling = 1;
@@ -67,6 +70,26 @@ export class AppComponent {
 
   calculateTruemmer() {
     return (((this.complexity + this.trolling) / (this.skill + this.experience)) * (11 - this.motivation)).toFixed(1);
+  }
+
+  setLanguage(language: string) {
+    if (language && this.translateService) {
+      if ('de' == language) {
+        this.translateService.use('de');
+        this.language = 'de';
+      } else if ('en' == language) {
+        this.translateService.use('en');
+        this.language = 'en';
+      } else {
+        console.error("Language not supported: " + language);
+      }
+    } else {
+      console.log("Unable to set language");
+    }
+  }
+
+  isLanguage(language: string) {
+    return this.language == language;
   }
 
 }
