@@ -59,7 +59,7 @@
               <mat-label for="raid" translate>raid</mat-label>
               <mat-select [(ngModel)]="complexity" name="complexity">
                 <mat-option *ngFor="let raid of raids" [value]="raid.complexity">
-                  {{raid.viewValue}}
+                  {{raid.viewValue | translate }}
                 </mat-option>
               </mat-select>
             </mat-form-field>

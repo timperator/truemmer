@@ -37,18 +37,18 @@ export class AppComponent {
   motivation = 1;
 
   raids: Raid[] = [
-    { viewValue: 'The Nature of Progress', complexity: 8 },
-    { viewValue: 'Eternity Vault', complexity: 1 },
-    { viewValue: 'Gods from the Machine', complexity: 10 },
-    { viewValue: 'Explosive Conflict', complexity: 7 },
-    { viewValue: "Karagga's Palace", complexity: 1 },
-    { viewValue: 'Scum and Villainy', complexity: 4 },
-    { viewValue: 'Temple of Sacrifice', complexity: 6 },
-    { viewValue: 'Terror from Beyond', complexity: 4 },
-    { viewValue: 'The R-4 Anomaly', complexity: 8 },
-    { viewValue: 'The Dread Fortress', complexity: 5 },
-    { viewValue: 'The Dread Palace', complexity: 6 },
-    { viewValue: 'The Ravagers', complexity: 6 },
+    { viewValue: 'raid_dxun', complexity: 8 },
+    { viewValue: 'raid_ev', complexity: 1 },
+    { viewValue: 'raid_gods', complexity: 10 },
+    { viewValue: 'raid_denova', complexity: 7 },
+    { viewValue: "raid_karagga", complexity: 1 },
+    { viewValue: 'raid_darvannis', complexity: 4 },
+    { viewValue: 'raid_temple', complexity: 6 },
+    { viewValue: 'raid_asation', complexity: 4 },
+    { viewValue: 'raid_deepstation', complexity: 8 },
+    { viewValue: 'raid_df', complexity: 5 },
+    { viewValue: 'raid_dp', complexity: 6 },
+    { viewValue: 'raid_rishi', complexity: 6 },
   ];
 
   setDarkTheme(darkTheme: boolean) {
