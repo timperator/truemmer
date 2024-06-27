@@ -2,15 +2,16 @@ import { Component, Inject, OnInit, inject } from '@angular/core';
 import { MatDialog as MatDialog } from '@angular/material/dialog';
 import { TruemmerdialogComponent } from './truemmerdialog/truemmerdialog.component';
 import { DOCUMENT } from '@angular/common';
-import { TranslateService } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Raid, SelectedRaid } from 'src/model/raid';
+
 
 export interface DialogData {
   truemmerfaktor: number;
 }
 
 import data from '../model/raids.json';
-import { MatSelect } from '@angular/material/select';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -37,7 +38,7 @@ export class AppComponent implements OnInit {
   experience = 1;
   motivation = 1;
 
-  constructor(public dialog: MatDialog, @Inject(DOCUMENT) private document: Document) {
+  constructor(public dialog: MatDialog, @Inject(DOCUMENT) private document: Document, private titleService: Title) {
   }
 
   ngOnInit(): void {
@@ -47,8 +48,16 @@ export class AppComponent implements OnInit {
     this.translateService.onDefaultLangChange.subscribe(() => {
       // workaround for ngx-translate bug with mat-select
       this.translationsLoaded = true;
+      this.setTitle();
+    });
+    this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.setTitle();
+    });
+  }
 
-      
+  setTitle(): void {
+    this.translateService.get('meme_potential').subscribe((res: string) => {
+      this.titleService.setTitle(res);
     });
   }
 
