@@ -19,6 +19,7 @@ import { MatMenuModule} from '@angular/material/menu';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -45,6 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatSidenavModule,
     MatIconModule,
     MatMenuModule,
+    MatButtonToggleModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

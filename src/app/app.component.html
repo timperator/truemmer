@@ -11,7 +11,7 @@
     <mat-icon>light_mode</mat-icon>
     <span translate>light_theme</span>
   </button>
-  <button  mat-menu-item  *ngIf="!darkTheme"  (click)="setDarkTheme(false)">
+  <button mat-menu-item *ngIf="!darkTheme" (click)="setDarkTheme(false)">
     <mat-icon>dark_mode</mat-icon>
     <span translate>dark_theme</span>
   </button>
@@ -55,14 +55,29 @@
         <mat-card-content>
 
           <div class="input-container">
-            <mat-form-field>
+            <mat-form-field *ngIf="translationsLoaded">
               <mat-label for="raid" translate>raid</mat-label>
-              <mat-select [(ngModel)]="complexity" name="complexity">
-                <mat-option *ngFor="let raid of raids" [value]="raid.complexity">
-                  {{raid.viewValue | translate }}
+              <mat-select [(ngModel)]="raid.raid" name="raid" (selectionChange)="selectedRaidChanged(raid)">
+                <mat-option *ngFor="let raid of raids" [value]="raid">
+                  {{raid.name | translate }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
+          </div>
+
+          <div class="input-container horizontal">
+
+            <mat-button-toggle-group name="difficulty" [(ngModel)]="raid.difficulty">
+              <mat-button-toggle value="sm">{{"raid_difficulty_1" | translate}}</mat-button-toggle>
+              <mat-button-toggle value="hm">{{"raid_difficulty_2" | translate}}</mat-button-toggle>
+              <mat-button-toggle value="nim" [disabled]="raid.raid.difficulty_nim_8 == null" >{{"raid_difficulty_3" | translate}}</mat-button-toggle>
+            </mat-button-toggle-group>
+
+            <mat-button-toggle-group name="groupsize" [(ngModel)]="raid.groupSize">
+              <mat-button-toggle value="8">8</mat-button-toggle>
+              <mat-button-toggle value="16" [disabled]="raid.raid.difficulty_sm_16 == null">16</mat-button-toggle>
+            </mat-button-toggle-group>
+
           </div>
 
           <div class="input-container">
@@ -94,7 +109,8 @@
           </div>
 
           <mat-card-actions>
-            <button mat-flat-button color="primary" class="btn" (click)="showTruemmerDialog()" translate="submit"></button>
+            <button mat-flat-button color="primary" class="btn" (click)="showTruemmerDialog()"
+              translate="submit"></button>
           </mat-card-actions>
 
         </mat-card-content>

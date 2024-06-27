@@ -25,5 +25,8 @@
     "raid_deepstation": "The R-4 Anomaly",
     "raid_df": "The Dread Fortress",
     "raid_dp": "The Dread Palace",
-    "raid_rishi": "The Ravagers"
+    "raid_rishi": "The Ravagers",
+    "raid_difficulty_1": "Normal",
+    "raid_difficulty_2": "Hardmode",
+    "raid_difficulty_3": "Nightmare"
 }
