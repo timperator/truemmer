@@ -5,7 +5,6 @@ import { DOCUMENT } from '@angular/common';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Raid, SelectedRaid } from 'src/model/raid';
 
-
 export interface DialogData {
   truemmerfaktor: number;
 }
@@ -21,7 +20,6 @@ import { Title } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
 
   darkTheme = true;
-  language = 'de';
   translateService = inject(TranslateService);
   translationsLoaded = false;
 
@@ -44,6 +42,11 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     if (localStorage.getItem('dark-theme') === 'false') {
       this.document.body.classList.remove('dark-theme');
+    }
+    const language = localStorage.getItem('language');
+    if (language) {
+      this.translateService.use(language);
+      // this.language = language;
     }
     this.translateService.onDefaultLangChange.subscribe(() => {
       // workaround for ngx-translate bug with mat-select
@@ -119,20 +122,20 @@ export class AppComponent implements OnInit {
     if (language && this.translateService) {
       if ('de' == language) {
         this.translateService.use('de');
-        this.language = 'de';
       } else if ('en' == language) {
         this.translateService.use('en');
-        this.language = 'en';
       } else {
         console.error("Language not supported: " + language);
+        return;
       }
+      localStorage.setItem('language', language);
     } else {
       console.log("Unable to set language");
     }
   }
 
   isLanguage(language: string) {
-    return this.language == language;
+    return this.translateService.currentLang == language;
   }
 
 }
