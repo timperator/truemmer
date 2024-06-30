@@ -46,7 +46,8 @@ export class AppComponent implements OnInit {
     const language = localStorage.getItem('language');
     if (language) {
       this.translateService.use(language);
-      // this.language = language;
+    } else {
+      this.translateService.use('de');
     }
     this.translateService.onDefaultLangChange.subscribe(() => {
       // workaround for ngx-translate bug with mat-select
