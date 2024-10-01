@@ -33,7 +33,7 @@
         "difficulty_hm_8": 4,
         "difficulty_hm_16": 4,
         "difficulty_nim_8": 7,
-        "difficulty_nim_16": -1
+        "difficulty_nim_16": 7
     },
     {
         "name": "raid_karagga",
@@ -51,7 +51,7 @@
         "difficulty_hm_8": 4,
         "difficulty_hm_16": 4,
         "difficulty_nim_8": 4,
-        "difficulty_nim_16": -1
+        "difficulty_nim_16": 5
     },
     {
         "name": "raid_temple",
@@ -66,10 +66,10 @@
         "name": "raid_asation",
         "difficulty_sm_8": 2.5,
         "difficulty_sm_16": 2,
-        "difficulty_hm_8": 4,
-        "difficulty_hm_16": 4,
-        "difficulty_nim_8": -1,
-        "difficulty_nim_16": -1
+        "difficulty_hm_8": 3,
+        "difficulty_hm_16": 3,
+        "difficulty_nim_8": 4,
+        "difficulty_nim_16": 4
     },
     {
         "name": "raid_deepstation",
