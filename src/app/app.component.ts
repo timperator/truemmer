@@ -92,7 +92,6 @@ export class AppComponent implements OnInit {
   }
 
   getComplexity(): number {
-    console.log("Calculating complexity");
     if (this.raid.groupSize == "8" && this.raid.difficulty == "sm") {
       return this.raid.raid.difficulty_sm_8;
     } else
