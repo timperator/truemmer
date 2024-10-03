@@ -3,10 +3,11 @@
 
 @include mat.core();
 
-body {
-  &.dark-theme {
-    @include mat.all-component-themes(m3-theme.$dark-theme);
 
+body {
+  @include mat.all-component-themes(m3-theme.$dark-theme);
+
+  &.dark-theme {
     app-root {
       mat-sidenav-container {
         background-color: rgb(10, 10, 10);
@@ -19,7 +20,7 @@ body {
   }
   
   &:not(.dark-theme) {
-    @include mat.all-component-themes(m3-theme.$light-theme);
+    @include mat.all-component-colors(m3-theme.$light-theme);
     
     app-root {
       mat-sidenav-container {
